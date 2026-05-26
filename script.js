@@ -3,10 +3,10 @@ let computerScore = 0;
 
 function getComputerChoice(){
     const choice = Math.random();
-    if (choice<=0.3){
+    if (choice<0.33){
         return "stone"
     }
-    else if (choice>0.3&&choice<=0.6){
+    else if (choice<0.66){
         return "paper"
     }
     else
