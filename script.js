@@ -15,10 +15,6 @@ function getComputerChoice() {
 
 }
 
-function getHumanChoice() {
-    const humanAttempt = prompt("Enter Stone, Paper or Scissor");
-    return humanAttempt.toLowerCase();
-}
 
 function playground(computer, human) {
     let humanChoice = human;
@@ -59,9 +55,7 @@ function playground(computer, human) {
 
 function playGame() {
 
-    const computer = getComputerChoice();
-    const human = getHumanChoice();
-    playground(computer, human);
+
 
     if (humanScore > computerScore) {
         console.log("Congratulations! You won the game!!!")
@@ -75,3 +69,26 @@ function playGame() {
 }
 
 playGame()
+
+const stn = document.querySelector(".Stone");
+const pap = document.querySelector(".Paper");
+const scisr = document.querySelector(".Scissor")
+
+
+stn.addEventListener("click", ()=>{
+    let human = "stone";
+    let computer = getComputerChoice();
+    playground(computer, human);
+})
+
+pap.addEventListener("click", ()=>{
+    let human = "paper";
+    let computer = getComputerChoice();
+    playground(computer, human);
+})
+
+scisr.addEventListener("click", ()=>{
+    let human = "scissor";
+    let computer = getComputerChoice();
+    playground(computer, human);
+})
