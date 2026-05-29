@@ -19,35 +19,37 @@ function getComputerChoice() {
 function playground(computer, human) {
     let humanChoice = human;
     let computerChoice = computer;
+    const result = document.querySelector(".Results");
     if (humanChoice === computerChoice) {
-        console.log("Tie! same choice");
+        result.textContent = "Tie! same choice";
+
     }
     else if (humanChoice === "stone" && computerChoice === "paper") {
-        console.log("You, Loose! paper beats Stone");
+        result.textContent = "You, Loose! paper beats Stone";
         computerScore++;
     }
     else if (humanChoice === "stone" && computerChoice === "scissor") {
-        console.log("You, Won! Stone beats Scissor");
+        result.textContent = "You, Won! Stone beats Scissor";
         humanScore++;
     }
     else if (humanChoice === "paper" && computerChoice === "stone") {
-        console.log("You, Won! Paper beats Stone");
+        result.textContent ="You, Won! Paper beats Stone"
         humanScore++;
     }
     else if (humanChoice === "paper" && computerChoice === "scissor") {
-        console.log("You, Loose! Scissor beats Paper");
+        result.textContent = "You, Loose! Scissor beats Paper"
         computerScore++;
     }
     else if (humanChoice === "scissor" && computerChoice === "stone") {
-        console.log("You, Loose! Stone beats Scissor");
+        result.textContent = "You, Loose! Stone beats Scissor"
         computerScore++;
     }
     else if (humanChoice === "scissor" && computerChoice === "paper") {
-        console.log("You, Won! Scissor beats Paper");
+        result.textContent = "You, Won! Scissor beats Paper"
         humanScore++;
     }
     else {
-        console.log("Error!");
+        result.textContent = "Error!"
     }
 
 
@@ -68,7 +70,7 @@ function playGame() {
     }
 }
 
-playGame()
+
 
 const stn = document.querySelector(".Stone");
 const pap = document.querySelector(".Paper");
@@ -92,3 +94,4 @@ scisr.addEventListener("click", ()=>{
     let computer = getComputerChoice();
     playground(computer, human);
 })
+
