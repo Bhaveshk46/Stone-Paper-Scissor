@@ -61,7 +61,7 @@ function playGame() {
         console.log("Congratulations! You won the game!!!")
     }
     else if (humanScore < computerScore) {
-        console.log("Ufff! Better luck next time")
+        console.log("Uff! Better luck next time")
     }
     else {
         console.log("Tie!")
