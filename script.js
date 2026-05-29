@@ -19,13 +19,16 @@ function getComputerChoice() {
 function playground(computer, human) {
     let humanChoice = human;
     let computerChoice = computer;
+
     const result = document.querySelector(".Results");
+    const score = document.querySelector(".Score");
+
     if (humanChoice === computerChoice) {
         result.textContent = "Tie! same choice";
 
     }
     else if (humanChoice === "stone" && computerChoice === "paper") {
-        result.textContent = "You, Loose! paper beats Stone";
+        result.textContent = "You, Lose! paper beats Stone";
         computerScore++;
     }
     else if (humanChoice === "stone" && computerChoice === "scissor") {
@@ -37,11 +40,11 @@ function playground(computer, human) {
         humanScore++;
     }
     else if (humanChoice === "paper" && computerChoice === "scissor") {
-        result.textContent = "You, Loose! Scissor beats Paper"
+        result.textContent = "You, Lose! Scissor beats Paper"
         computerScore++;
     }
     else if (humanChoice === "scissor" && computerChoice === "stone") {
-        result.textContent = "You, Loose! Stone beats Scissor"
+        result.textContent = "You, Lose! Stone beats Scissor"
         computerScore++;
     }
     else if (humanChoice === "scissor" && computerChoice === "paper") {
@@ -51,24 +54,28 @@ function playground(computer, human) {
     else {
         result.textContent = "Error!"
     }
-
-
+    score.textContent = `Your score =${humanScore} | Computer score = ${computerScore}`
+    if(humanScore===5||computerScore===5){
+        playGame();
+    }
 }
 
 function playGame() {
 
-
+    const Final = document.querySelector(".finalResult");
 
     if (humanScore > computerScore) {
-        console.log("Congratulations! You won the game!!!")
+        Final.textContent = "Congratulations! You won the game!!!"
     }
     else if (humanScore < computerScore) {
-        console.log("Uff! Better luck next time")
+        Final.textContent = "Uff! Better luck next time"
     }
     else {
-        console.log("Tie!")
+        Final.textContent = "Tie!"
     }
+
 }
+
 
 
 
